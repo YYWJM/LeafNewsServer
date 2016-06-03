@@ -1,5 +1,6 @@
 package com.yuanyin.leafnews;
 
+import com.yuanyin.leafnews.modules.semanticProcess.service.CoreNLPService;
 import com.yuanyin.leafnews.modules.news.entity.News;
 import com.yuanyin.leafnews.modules.news.service.NewsService;
 import org.junit.Test;
@@ -19,9 +20,16 @@ public class LeafNewsTest {
     private NewsService newsService;
 
     @Test
-    public void test1() {
+    public void testNewsService() {
         News news = newsService.getById("1");
         System.out.println("--------------------------------" + news.toString());
     }
 
+    @Resource
+    private CoreNLPService coreNLPService;
+
+    @Test
+    public void testCoreNLPService(){
+        coreNLPService.setAllKeyWord();
+    }
 }

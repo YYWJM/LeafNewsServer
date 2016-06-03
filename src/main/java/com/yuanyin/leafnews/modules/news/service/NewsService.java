@@ -11,4 +11,6 @@ public interface NewsService {
     public News getById(String id);
 
     public List<News> getAll();
+
+    public void updateByPrimaryKey(News news);
 }

@@ -25,4 +25,9 @@ public class NewsServiceImpl implements NewsService {
     public List<News> getAll() {
         return newsMapper.selectAll();
     }
+
+    @Override
+    public void updateByPrimaryKey(News news) {
+        newsMapper.updateByPrimaryKey(news);
+    }
 }
